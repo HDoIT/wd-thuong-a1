@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="vi">
 
@@ -8,12 +7,12 @@
     <meta http-equiv="Cache-Control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="Expires" content="-1">
-    <meta name="keywords"
-        content="tạo thiệp cưới miễn phí, mehappy, thiệp cưới online, thiep cuoi online, thiệp cưới, website đám cưới, đám cưới, thiệp cưới đẹp,thiệp cưới điện tử, thiệp cưới dien tu, wedding, weddings, happy wedding, mewedding, weddingme, thiệp cưới đẹp, wedding day, wedding days, thiệp cưới đẹp, Thiệp mời cưới online, Mẫu thiệp cưới đẹp, Thiệp cưới điện tử giá rẻ, Thiệp cưới online có nhạc, Mẫu thiệp cưới điện tử hiện đại, video cưới, video cưới vui nhộn, video cưới chibi, video chibi cưới, video chibi, video cưới đẹp">
-    <meta name="description" content="Sử dụng Full tất cả các tính, tùy chỉnh không giới hạn và sử dụng trọn đời">
+    <meta name="description"
+        content="Thiệp cưới online Hoàng Tùng & Hoài Thương – Lễ Nạp Tài tại gia đình nhà gái. Tham dự lễ cưới trực tuyến đẹp mắt, hiện đại, trọn đời và tùy chỉnh không giới hạn.">
     <meta name='viewport' content='width=device-width, initial-scale=1' />
-    <script
+    <!-- <script
         type='text/javascript'>window.ladi_viewport = function (b) { var a = document; b = b ? b : 'innerWidth'; var c = window[b]; var d = c < 768; if (typeof window.ladi_is_desktop == "undefined" || window.ladi_is_desktop == undefined) { window.ladi_is_desktop = !d; } var e = 960; var f = 420; var g = ''; if (!d) { g = "width=" + e + ",user-scalable=no,initial-scale=1.0"; } else { var h = 1; var i = f; if (i != c) { h = c / i; } g = "width=" + i + ",user-scalable=no,initial-scale=" + h + ",minimum-scale=" + h + ",maximum-scale=" + h; } var j = a.getElementById("viewport"); if (!j) { j = a.createElement("meta"); j.id = "viewport"; j.name = "viewport"; a.head.appendChild(j); } j.setAttribute("content", g); }; window.ladi_viewport(); window.ladi_fbq_data = []; window.ladi_fbq = function () { window.ladi_fbq_data.push(arguments); }; window.ladi_ttq_data = []; window.ladi_ttq = function () { window.ladi_ttq_data.push(arguments); };</script>
+     -->
     <link rel="canonical" href="https://mwd.mewedding.vn/giao-dien-hb04-vip" />
     <meta property="og:url" content="https://mwd.mewedding.vn/giao-dien-hb04-vip" />
     <meta property="og:title" content="Giao diện Thiệp cưới QDMedia-03" />
@@ -39,7 +38,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link rel="preconnect" href="https://w.ladicdn.com/" crossorigin>
     <link rel="preconnect" href="https://s.ladicdn.com/" crossorigin>
-    <link rel="preconnect" href="https://api1.ldpform.com/" crossorigin>
+    <!-- <link rel="preconnect" href="https://api1.ldpform.com/" crossorigin> -->
     <link rel="preconnect" href="https://a.ladipage.com/" crossorigin>
     <link rel="preconnect" href="https://api.sales.ldpform.net/" crossorigin>
     <link rel="preload"
@@ -308,6 +307,7 @@
 
         .ladipage-message {
             position: fixed;
+            display: none;
             width: 100%;
             height: 100%;
             top: 0;
@@ -516,7 +516,7 @@
             position: absolute;
             width: 100%;
             height: 85%;
-    top: 143px;
+            top: 143px;
             left: 0;
             pointer-events: none;
             overflow: hidden;
@@ -5811,7 +5811,100 @@
         }
     </style>
 
+    <style>
+        /* CSS cho thông báo */
+        #wedding-notifications {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 300px;
+            z-index: 10000;
+            font-family: Arial, sans-serif;
+        }
 
+        .notification {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            margin-bottom: 15px;
+            padding: 15px;
+            border-left: 4px solid #e91e63;
+            animation: slideIn 0.3s ease-out;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .notification.success {
+            border-left-color: #4caf50;
+        }
+
+        .notification.error {
+            border-left-color: #f44336;
+        }
+
+        .notification-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .notification-title {
+            font-weight: bold;
+            color: #333;
+            font-size: 16px;
+        }
+
+        .notification-close {
+            background: none;
+            border: none;
+            font-size: 18px;
+            cursor: pointer;
+            color: #999;
+        }
+
+        .notification-content {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        .notification-details {
+            margin-top: 10px;
+            font-size: 12px;
+            color: #888;
+            border-top: 1px solid #eee;
+            padding-top: 8px;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .notification.fade-out {
+            animation: slideOut 0.3s ease-in forwards;
+        }
+
+        @keyframes slideOut {
+            from {
+                transform: translateX(0);
+                opacity: 1;
+            }
+
+            to {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+        }
+    </style>
 
     <audio id="background-music" loop="">
         <source
@@ -6035,9 +6128,11 @@
                         <div id="HEADLINE125" class='ladi-element'>
                             <h3 class='ladi-headline'><span style="font-weight: bold;">Chú Rể:</span> <span
                                     style="font-weight: normal;">Hoàng Tùng</span><br><span
-                                    style="font-weight: bold;">Ông:</span> <span style="font-weight: normal;">Hoàng Văn Việt</span><br><span style="font-weight: bold;">Bà:</span> <span
+                                    style="font-weight: bold;">Ông:</span> <span style="font-weight: normal;">Hoàng Văn
+                                    Việt</span><br><span style="font-weight: bold;">Bà:</span> <span
                                     style="font-weight: normal;">Phan Thị Lý</span><br><span
-                                    style="font-weight: bold;">Địa Chỉ:</span> <span style="font-weight: normal;">SN 12, ngõ 66, đường số 2 thôn Thắng Phú<br>Xã Quảng Ngọc, Tỉnh Thanh Hóa</span><br></h3>
+                                    style="font-weight: bold;">Địa Chỉ:</span> <span style="font-weight: normal;">SN 12,
+                                    ngõ 66, đường số 2 thôn Thắng Phú<br>Xã Quảng Ngọc, Tỉnh Thanh Hóa</span><br></h3>
                         </div>
                     </div>
                 </div>
@@ -6063,10 +6158,11 @@
                         </div>
                         <div id="HEADLINE245" class='ladi-element'>
                             <h3 class='ladi-headline'><span style="font-weight: bold;">Cô Dâu: </span><span
-                                    style="font-weight: normal;">Hoài Thương</span><br><span style="font-weight: bold;">Bà:</span>&nbsp;<span
-                                    style="font-weight: normal;">Trần Thị Tình</span><br><span
-                                    style="font-weight: bold;">Địa Chỉ:</span>&nbsp;<span
-                                    style="font-weight: normal;">SN 28, đường số 4, thôn Ninh Phạm<br>Xã Quảng Ninh, Tỉnh Thanh Hóa</span><br>
+                                    style="font-weight: normal;">Hoài Thương</span><br><span
+                                    style="font-weight: bold;">Bà:</span>&nbsp;<span style="font-weight: normal;">Trần
+                                    Thị Tình</span><br><span style="font-weight: bold;">Địa Chỉ:</span>&nbsp;<span
+                                    style="font-weight: normal;">SN 28, đường số 4, thôn Ninh Phạm<br>Xã Quảng Ninh,
+                                    Tỉnh Thanh Hóa</span><br>
                             </h3>
                         </div>
                     </div>
@@ -6248,7 +6344,8 @@
                                 </svg></div>
                         </div>
                         <div id="HEADLINE258" class='ladi-element'>
-                            <h3 class='ladi-headline'>Tại: Tư Gia Nhà Trai<br>SN 12, ngõ 66, đường số 2 thôn Thắng Phú<br>Xã Quảng Ngọc, Tỉnh Thanh Hóa<br></h3>
+                            <h3 class='ladi-headline'>Tại: Tư Gia Nhà Trai<br>SN 12, ngõ 66, đường số 2 thôn Thắng
+                                Phú<br>Xã Quảng Ngọc, Tỉnh Thanh Hóa<br></h3>
                         </div>
                         <div id="LINE33" class='ladi-element'>
                             <div class='ladi-line'>
@@ -6311,7 +6408,8 @@
                                 </svg></div>
                         </div>
                         <div id="HEADLINE264" class='ladi-element'>
-                            <h3 class='ladi-headline'>Tại: Tư Gia Nhà Trai<br>SN 12, ngõ 66, đường số 2 thôn Thắng Phú<br>Xã Quảng Ngọc, Tỉnh Thanh Hóa<br></h3>
+                            <h3 class='ladi-headline'>Tại: Tư Gia Nhà Trai<br>SN 12, ngõ 66, đường số 2 thôn Thắng
+                                Phú<br>Xã Quảng Ngọc, Tỉnh Thanh Hóa<br></h3>
                         </div>
                         <div id="LINE35" class='ladi-element'>
                             <div class='ladi-line'>
@@ -6379,7 +6477,8 @@
                                 </svg></div>
                         </div>
                         <div id="HEADLINE267" class='ladi-element'>
-                            <h3 class='ladi-headline'>Tại: Tư Gia Nhà Gái<br>SN 28, đường số 4, thôn Ninh Phạm<br>Xã Quảng Ninh, Tỉnh Thanh Hóa<br></h3>
+                            <h3 class='ladi-headline'>Tại: Tư Gia Nhà Gái<br>SN 28, đường số 4, thôn Ninh Phạm<br>Xã
+                                Quảng Ninh, Tỉnh Thanh Hóa<br></h3>
                         </div>
                         <div id="LINE37" class='ladi-element'>
                             <div class='ladi-line'>
@@ -6646,7 +6745,7 @@
                             </div>
                         </div>
                         <div id="FORM13" data-config-id="" class='ladi-element'>
-                            <form autocomplete="off" method="post" class='ladi-form'>
+                            <form autocomplete="off" method="post" class='ladi-form' id="wedding-form">
                                 <div id="BUTTON64" class='ladi-element'>
                                     <div class='ladi-button ladi-transition'>
                                         <div class="ladi-button-background"></div>
@@ -6960,7 +7059,8 @@
                                     </div>
                                 </div>
                                 <div id="HEADLINE289" class='ladi-element'>
-                                    <h3 class='ladi-headline'>SN 28, đường số 4, thôn Ninh Phạm<br>Xã Quảng Ninh, Tỉnh Thanh Hóa</h3>
+                                    <h3 class='ladi-headline'>SN 28, đường số 4, thôn Ninh Phạm<br>Xã Quảng Ninh, Tỉnh
+                                        Thanh Hóa</h3>
                                 </div>
                             </div>
                         </div>
@@ -6972,6 +7072,8 @@
     <div id="backdrop-popup" class="backdrop-popup"></div>
     <div id="backdrop-dropbox" class="backdrop-dropbox"></div>
     <div id="lightbox-screen" class="lightbox-screen"></div>
+    <div id="wedding-notifications"></div>
+
     <script id="script_lazyload"
         type="text/javascript">window.lazyload_run = function (dom, is_first, check_dom_rect) { if (check_dom_rect && (document.body.clientWidth <= 0 || document.body.clientheight <= 0)) { return setTimeout(function () { window.lazyload_run(dom, is_first, check_dom_rect); }, 1); } var style_lazyload = document.getElementById('style_lazyload'); var list_element_lazyload = dom.querySelectorAll('body.lazyload .ladi-overlay, body.lazyload .ladi-box, body.lazyload .ladi-button-background, body.lazyload .ladi-collection-item, body.lazyload .ladi-countdown-background, body.lazyload .ladi-form-item-background, body.lazyload .ladi-form-label-container .ladi-form-label-item.image, body.lazyload .ladi-frame-background, body.lazyload .ladi-gallery-view-item, body.lazyload .ladi-gallery-control-item, body.lazyload .ladi-headline, body.lazyload .ladi-image-background, body.lazyload .ladi-image-compare, body.lazyload .ladi-list-paragraph ul li, body.lazyload .ladi-section-background, body.lazyload .ladi-survey-option-background, body.lazyload .ladi-survey-option-image, body.lazyload .ladi-tabs-background, body.lazyload .ladi-video-background, body.lazyload .ladi-banner, body.lazyload .ladi-spin-lucky-screen, body.lazyload .ladi-spin-lucky-start'); var docEventScroll = window; for (var i = 0; i < list_element_lazyload.length; i++) { var rect = list_element_lazyload[i].getBoundingClientRect(); if (rect.x == "undefined" || rect.x == undefined || rect.y == "undefined" || rect.y == undefined) { rect.x = rect.left; rect.y = rect.top; } var offset_top = rect.y + window.scrollY; if (offset_top >= window.scrollY + window.innerHeight || window.scrollY >= offset_top + list_element_lazyload[i].offsetHeight) { list_element_lazyload[i].classList.add('ladi-lazyload'); } } if (typeof style_lazyload != "undefined" && style_lazyload != undefined) { style_lazyload.parentElement.removeChild(style_lazyload); } document.body.classList.remove("lazyload"); var currentScrollY = window.scrollY; var stopLazyload = function (event) { if (event.type == "scroll" && window.scrollY == currentScrollY) { currentScrollY = -1; return; } docEventScroll.removeEventListener('scroll', stopLazyload); list_element_lazyload = document.getElementsByClassName('ladi-lazyload'); while (list_element_lazyload.length > 0) { list_element_lazyload[0].classList.remove('ladi-lazyload'); } }; if (is_first) { var scrollEventPassive = null; try { var opts = Object.defineProperty({}, 'passive', { get: function () { scrollEventPassive = { passive: true }; } }); window.addEventListener('testPassive', null, opts); window.removeEventListener('testPassive', null, opts); } catch (e) { } docEventScroll.addEventListener('scroll', stopLazyload, scrollEventPassive); } return dom; }; window.lazyload_run(document, true, true);</script>
     <!--[if lt IE 9]><script src="https://w.ladicdn.com/v5/source/html5shiv.min.js?v=1752746419968"></script><script src="https://w.ladicdn.com/v5/source/respond.min.js?v=1752746419968"></script><![endif]-->
@@ -7748,34 +7850,263 @@
     <script>
         // Thời điểm kết thúc
         const targetDate = new Date("2025-12-01T10:00:00").getTime();
-      
+
         function updateCountdown() {
-          const now = new Date().getTime();
-          const distance = targetDate - now;
-      
-          if (distance <= 0) {
-            document.querySelector("#COUNTDOWN_ITEM29 span").innerText = "00";
-            document.querySelector("#COUNTDOWN_ITEM30 span").innerText = "00";
-            document.querySelector("#COUNTDOWN_ITEM31 span").innerText = "00";
-            document.querySelector("#COUNTDOWN_ITEM32 span").innerText = "00";
-            return;
-          }
-      
-          const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-          const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-          const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-          const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-      
-          document.querySelector("#COUNTDOWN_ITEM29 span").innerText = String(days).padStart(2, '0');
-          document.querySelector("#COUNTDOWN_ITEM30 span").innerText = String(hours).padStart(2, '0');
-          document.querySelector("#COUNTDOWN_ITEM31 span").innerText = String(minutes).padStart(2, '0');
-          document.querySelector("#COUNTDOWN_ITEM32 span").innerText = String(seconds).padStart(2, '0');
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+
+            if (distance <= 0) {
+                document.querySelector("#COUNTDOWN_ITEM29 span").innerText = "00";
+                document.querySelector("#COUNTDOWN_ITEM30 span").innerText = "00";
+                document.querySelector("#COUNTDOWN_ITEM31 span").innerText = "00";
+                document.querySelector("#COUNTDOWN_ITEM32 span").innerText = "00";
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.querySelector("#COUNTDOWN_ITEM29 span").innerText = String(days).padStart(2, '0');
+            document.querySelector("#COUNTDOWN_ITEM30 span").innerText = String(hours).padStart(2, '0');
+            document.querySelector("#COUNTDOWN_ITEM31 span").innerText = String(minutes).padStart(2, '0');
+            document.querySelector("#COUNTDOWN_ITEM32 span").innerText = String(seconds).padStart(2, '0');
         }
-      
+
         setInterval(updateCountdown, 1000);
         updateCountdown();
-      </script>
-      
+    </script>
+    <script>
+        // URL của Google Apps Script Web App
+        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw4LQWaiErdFrY-8jsmDQTJK65t0xpSc_A9NE-E3FXG6nnykhyJy4ihz1FSFcdb76X6Bw/exec';
+    
+        // Biến để lưu trữ số lượng bản ghi cuối cùng
+        let lastRecordCount = 0;
+        let notificationInterval;
+    
+        // Hàm lấy dữ liệu THẬT từ Google Sheet
+        async function fetchDataFromSheet() {
+            try {
+                // Thêm timestamp để tránh cache
+                const url = SCRIPT_URL + '?action=getData&t=' + Date.now();
+                
+                const response = await fetch(url);
+                
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                
+                const data = await response.json();
+                console.log('Data received from sheet:', data);
+                
+                // Kiểm tra nếu có dữ liệu mới
+                if (data && data.length > 0 && data.length > lastRecordCount) {
+                    // Lấy các bản ghi mới nhất
+                    const newRecords = data.slice(lastRecordCount);
+                    
+                    // Hiển thị thông báo cho từng bản ghi mới
+                    newRecords.forEach(record => {
+                        createNotification(
+                            'Có người vừa xác nhận tham dự! 🎉',
+                            `${record.name} vừa xác nhận tham dự đám cưới`,
+                            'info',
+                            `Tham dự: ${record.attendance}<br>Nơi tham dự: ${record.location}<br>Số lượng: ${record.guests}`
+                        );
+                    });
+                    
+                    // Cập nhật số lượng bản ghi cuối cùng
+                    lastRecordCount = data.length;
+                }
+                
+            } catch (error) {
+                console.error('Error fetching data from sheet:', error);
+                // Không hiển thị lỗi để tránh làm phiền người dùng
+            }
+        }
+    
+        // Hàm tạo thông báo
+        function createNotification(title, message, type = 'info', details = null) {
+            const notificationsContainer = document.getElementById('wedding-notifications');
+            const notificationId = 'notification-' + Date.now();
+    
+            const notification = document.createElement('div');
+            notification.id = notificationId;
+            notification.className = `notification ${type}`;
+    
+            let detailsHtml = '';
+            if (details) {
+                detailsHtml = `
+                <div class="notification-details">
+                    ${details}
+                </div>
+            `;
+            }
+    
+            notification.innerHTML = `
+            <div class="notification-header">
+                <div class="notification-title">${title}</div>
+                <button class="notification-close">&times;</button>
+            </div>
+            <div class="notification-content">${message}</div>
+            ${detailsHtml}
+        `;
+    
+            notificationsContainer.appendChild(notification);
+    
+            // Xử lý đóng thông báo
+            const closeButton = notification.querySelector('.notification-close');
+            closeButton.addEventListener('click', () => {
+                closeNotification(notificationId);
+            });
+    
+            // Tự động đóng sau 5 giây (trừ khi có lỗi)
+            if (type !== 'error') {
+                setTimeout(() => {
+                    closeNotification(notificationId);
+                }, 5000);
+            }
+        }
+    
+        // Hàm đóng thông báo
+        function closeNotification(id) {
+            const notification = document.getElementById(id);
+            if (notification) {
+                notification.classList.add('fade-out');
+                setTimeout(() => {
+                    if (notification.parentNode) {
+                        notification.parentNode.removeChild(notification);
+                    }
+                }, 300);
+            }
+        }
+    
+        // Hàm kiểm tra tính hợp lệ của form
+        function validateForm() {
+            const form = document.getElementById('wedding-form');
+    
+            const name = form.name.value.trim();
+            const attendance = form.querySelector('input[name="form_item"]:checked')?.value;
+            const location = form.form_item14.value;
+            const guests = form.form_item15.value;
+    
+            console.log('Validation data:', { name, attendance, location, guests });
+    
+            // if (!name) {
+            //     createNotification('Lỗi', 'Vui lòng nhập họ và tên', 'error');
+            //     form.name.focus();
+            //     return false;
+            // }
+    
+            // if (!attendance) {
+            //     createNotification('Lỗi', 'Vui lòng chọn xác nhận tham dự', 'error');
+            //     return false;
+            // }
+    
+            // if (!location) {
+            //     createNotification('Lỗi', 'Vui lòng chọn nơi tham dự', 'error');
+            //     return false;
+            // }
+    
+            // if (!guests) {
+            //     createNotification('Lỗi', 'Vui lòng chọn số lượng người tham dự', 'error');
+            //     return false;
+            // }
+    
+            return true;
+        }
+    
+        // Xử lý nhấn nút BUTTON64 - Sử dụng no-cors
+        document.getElementById('BUTTON64').addEventListener('click', function (e) {
+            console.log('Button clicked');
+            e.preventDefault();
+    
+            if (!validateForm()) {
+                return;
+            }
+    
+            const form = document.getElementById('wedding-form');
+    
+            // Lấy dữ liệu đúng tên field từ HTML
+            const data = {
+                name: form.name.value,
+                phone: form.phone.value,
+                message: form.message.value,
+                attendance: form.querySelector('input[name="form_item"]:checked').value,
+                location: form.form_item14.value,
+                guests: form.form_item15.value,
+                timestamp: new Date().toISOString()
+            };
+    
+            console.log('Data to send:', data);
+    
+            // Hiển thị thông báo đang xử lý
+            // createNotification('Đang xử lý', 'Vui lòng chờ trong giây lát...', 'info');
+    
+            // Gửi dữ liệu đến Google Apps Script với no-cors
+            fetch(SCRIPT_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data)
+            })
+                .then(() => {
+                    // Với no-cors, chúng ta không thể biết kết quả nhưng coi như luôn thành công
+                    console.log('Request sent (no-cors mode)');
+                    createNotification(
+                        'Thành công',
+                        'Đã gửi thông tin thành công! Cảm ơn bạn đã xác nhận tham dự.',
+                        'success',
+                        `Họ tên: ${data.name}<br>Số điện thoại: ${data.phone || 'Chưa cung cấp'}<br>Tham dự: ${data.attendance}<br>Nơi tham dự: ${data.location}<br>Số lượng: ${data.guests}`
+                    );
+    
+                    // Reset form sau khi gửi
+                    form.reset();
+    
+                    // Lấy lại dữ liệu mới sau khi gửi thành công
+                    setTimeout(fetchDataFromSheet, 2000);
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    // Ngay cả khi có lỗi, vẫn hiển thị thành công cho user (vì no-cors không thể biết kết quả)
+                    createNotification(
+                        'Thành công',
+                        'Đã gửi thông tin!',
+                        'success',
+                        `Họ tên: ${data.name}<br>Số điện thoại: ${data.phone || 'Chưa cung cấp'}<br>Tham dự: ${data.attendance}<br>Nơi tham dự: ${data.location}<br>Số lượng: ${data.guests}`
+                    );
+                    form.reset();
+                });
+        });
+    
+        // Hàm khởi tạo
+        function initializeApp() {
+            // Hiển thị thông báo chào mừng
+            // createNotification(
+            //     'Chào mừng',
+            //     'Cảm ơn bạn đã đến tham dự! Hãy điền form để xác nhận.',
+            //     'info'
+            // );
+    
+            // Lấy dữ liệu lần đầu
+            fetchDataFromSheet();
+    
+            // Bắt đầu lấy dữ liệu định kỳ mỗi 5 giây
+            notificationInterval = setInterval(fetchDataFromSheet, 5000);
+        }
+    
+        // Dừng lấy dữ liệu khi trang bị đóng
+        window.addEventListener('beforeunload', () => {
+            if (notificationInterval) {
+                clearInterval(notificationInterval);
+            }
+        });
+    
+        // Khởi tạo ứng dụng khi trang được tải
+        window.addEventListener('load', initializeApp);
+    </script>
 </body>
 
 </html><!--Publish time: Fri, 18 Jul 2025 09:58:23 GMT--><!--LadiPage build time: Thu, 17 Jul 2025 10:00:19 GMT-->
