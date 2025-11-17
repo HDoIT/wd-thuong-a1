@@ -7973,59 +7973,59 @@
             }
 
             // Hiển thị notification mới sau khi ẩn cái cũ
-            setTimeout(() => {
-                const notificationData = allNotifications[currentNotificationIndex];
-                createNotification(
-                    notificationData.title,
-                    notificationData.message,
-                    notificationData.type,
-                    notificationData.details
-                );
+            // setTimeout(() => {
+            //     const notificationData = allNotifications[currentNotificationIndex];
+            //     createNotification(
+            //         notificationData.title,
+            //         notificationData.message,
+            //         notificationData.type,
+            //         notificationData.details
+            //     );
 
-                // Di chuyển đến notification tiếp theo
-                currentNotificationIndex = (currentNotificationIndex + 1) % allNotifications.length;
-                isShowingNotification = false;
-            }, 350);
+            //     // Di chuyển đến notification tiếp theo
+            //     currentNotificationIndex = (currentNotificationIndex + 1) % allNotifications.length;
+            //     isShowingNotification = false;
+            // }, 350);
         }
 
-        function createNotification(title, message, type = 'info', details = null) {
-            const notificationsContainer = document.getElementById('wedding-notifications');
-            const notificationId = 'notification-' + Date.now();
+        // function createNotification(title, message, type = 'info', details = null) {
+        //     const notificationsContainer = document.getElementById('wedding-notifications');
+        //     const notificationId = 'notification-' + Date.now();
 
-            const notification = document.createElement('div');
-            notification.id = notificationId;
-            notification.className = `notification ${type}`;
+        //     const notification = document.createElement('div');
+        //     notification.id = notificationId;
+        //     notification.className = `notification ${type}`;
 
-            let detailsHtml = '';
-            if (details) {
-                detailsHtml = `<div class="notification-details">${details}</div>`;
-            }
+        //     let detailsHtml = '';
+        //     if (details) {
+        //         detailsHtml = `<div class="notification-details">${details}</div>`;
+        //     }
 
-            notification.innerHTML = `
-            <div class="notification-header">
-                <div class="notification-title">${title}</div>
-                <button class="notification-close">&times;</button>
-            </div>
-            <div class="notification-content">${message}</div>
-            ${detailsHtml}
-        `;
+        //     notification.innerHTML = `
+        //     <div class="notification-header">
+        //         <div class="notification-title">${title}</div>
+        //         <button class="notification-close">&times;</button>
+        //     </div>
+        //     <div class="notification-content">${message}</div>
+        //     ${detailsHtml}
+        // `;
 
-            if (notificationsContainer) {
-                notificationsContainer.appendChild(notification);
+        //     if (notificationsContainer) {
+        //         notificationsContainer.appendChild(notification);
 
-                // Hiển thị notification với animation
-                setTimeout(() => {
-                    notification.classList.add('show');
-                }, 50);
-            } else {
-                console.warn("Element #wedding-notifications not found. Notification not displayed.");
-            }
+        //         // Hiển thị notification với animation
+        //         setTimeout(() => {
+        //             notification.classList.add('show');
+        //         }, 50);
+        //     } else {
+        //         console.warn("Element #wedding-notifications not found. Notification not displayed.");
+        //     }
 
-            const closeButton = notification.querySelector('.notification-close');
-            closeButton.addEventListener('click', () => {
-                closeNotification(notificationId);
-            });
-        }
+        //     const closeButton = notification.querySelector('.notification-close');
+        //     closeButton.addEventListener('click', () => {
+        //         closeNotification(notificationId);
+        //     });
+        // }
 
         function closeNotification(id) {
             const notification = document.getElementById(id);
@@ -8113,12 +8113,12 @@
                     console.log('Request sent successfully');
 
                     // Thêm notification thành công vào danh sách
-                    allNotifications.push({
-                        title: `${data.name}`,
-                        message: `${data.message}`,
-                        type: 'success',
-                        details: `Số điện thoại: ${data.phone || 'Chưa cung cấp'}<br>Tham dự: ${data.attendance}<br>Nơi tham dự: ${data.location}<br>Số lượng: ${data.guests}`
-                    });
+                    // allNotifications.push({
+                    //     title: `${data.name}`,
+                    //     message: `${data.message}`,
+                    //     type: 'success',
+                    //     details: `Số điện thoại: ${data.phone || 'Chưa cung cấp'}<br>Tham dự: ${data.attendance}<br>Nơi tham dự: ${data.location}<br>Số lượng: ${data.guests}`
+                    // });
 
                     form.reset();
 
@@ -8133,11 +8133,11 @@
                     console.error('Fetch Error:', error);
 
                     // Thêm notification lỗi vào danh sách
-                    allNotifications.push({
-                        title: 'Lỗi',
-                        message: 'Có lỗi xảy ra khi gửi thông tin. Vui lòng thử lại.',
-                        type: 'error'
-                    });
+                    // allNotifications.push({
+                    //     title: 'Lỗi',
+                    //     message: 'Có lỗi xảy ra khi gửi thông tin. Vui lòng thử lại.',
+                    //     type: 'error'
+                    // });
                 });
         });
 
